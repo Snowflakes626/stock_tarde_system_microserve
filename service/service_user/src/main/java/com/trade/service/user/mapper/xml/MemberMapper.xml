@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.trade.service.user.mapper.MemberMapper">
+
+    <!--根据create time统计注册时间 占位符#-->
+    <select id="selectRegisterNumByDay" resultType="java.lang.Integer">
+        SELECT COUNT(1)
+        FROM user_info
+        WHERE DATE(create_time) = #{day}
+    </select>
+
+    <select id="selectQueryVo" resultType="com.trade.service.user.entity.vo.QueryVo">
+        SELECT id, phone, email, username, sex, age, avatar, sign, avl_balance, total_balance
+        FROM user_info
+        WHERE #{id} = id
+    </select>
+
+    <select id="selectBalance" resultType="com.trade.service.user.entity.UserBalance">
+        SELECT avl_balance, total_balance
+        FROM user_info
+        WHERE #{id} = id
+    </select>
+
+    <update id="updateBalance">
+        update user_info
+        set avl_balance = avl_balance + #{avlChange},
+            total_balance = total_balance + #{totalChange}
+        where #{id} = id
+    </update>
+
+    <update id="updateBalanceByBank">
+        update user_info
+        set avl_balance = avl_balance + #{updateValue},
+            total_balance = total_balance + #{updateValue}
+        where #{id} = id
+    </update>
+
+
+</mapper>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.trade.service.user.mapper.HoldStockMapper">
+
+    <select id="getHoldStockInfo" resultType="com.trade.service.user.entity.HoldStockInfo">
+        SELECT *
+        FROM hold_shares
+        WHERE #{userId} = user_id and #{code} =  stock_code
+    </select>
+
+    <select id="getAllHold" resultType="com.trade.service.user.entity.HoldStockInfo">
+        SELECT *
+        FROM hold_shares
+        WHERE #{userId} = user_id
+    </select>
+
+    <select id="selectPageByUserId" resultType="com.trade.service.user.entity.HoldStockInfo">
+        SELECT user_id, stock_code, stock_name, cost_price, total_number, avl_number
+        FROM hold_shares
+        ${ew.customSqlSegment}
+    </select>
+</mapper>

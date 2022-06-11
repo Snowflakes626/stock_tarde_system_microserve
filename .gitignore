@@ -1,0 +1,7 @@
+# Project exclude paths
+/common/target/
+/service/service_domestic_stock/target/
+/service/service_mail/target/
+/service/service_predict/target/
+/service/service_trade/target/
+/service/service_user/target/

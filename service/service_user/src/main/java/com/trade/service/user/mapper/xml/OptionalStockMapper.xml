@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.trade.service.user.mapper.OptionalStockMapper">
+
+
+<select id="existOptionalStock" resultType="Integer">
+    SELECT COUNT(*)
+    FROM hold_shares
+    WHERE #{userId} = user_id and #{code} =  stock_code
+</select>
+
+<select id="selectPageByUserId" resultType="com.trade.service.user.entity.OptionalStock">
+    SELECT user_id, code, name, insert_date
+    FROM user_optional
+    ${ew.customSqlSegment}
+</select>
+
+</mapper>

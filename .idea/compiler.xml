@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="service_user" />
+        <module name="service_mail" />
+        <module name="common" />
+        <module name="service_trade" />
+        <module name="service_foreign_stock" />
+        <module name="service_domestic_stock" />
+        <module name="service_predict" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="12">
+      <module name="common" target="1.8" />
+      <module name="service" target="1.8" />
+      <module name="service_domestic_stock" target="1.8" />
+      <module name="service_foreign_stock" target="1.8" />
+      <module name="service_mail" target="1.8" />
+      <module name="service_predict" target="1.8" />
+      <module name="service_trade" target="1.8" />
+      <module name="service_user" target="1.8" />
+      <module name="stock_tarde_system_microserve" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="common" options="-parameters" />
+      <module name="service_domestic_stock" options="-parameters" />
+      <module name="service_foreign_stock" options="-parameters" />
+      <module name="service_mail" options="-parameters" />
+      <module name="service_predict" options="-parameters" />
+      <module name="service_trade" options="-parameters" />
+      <module name="service_user" options="-parameters" />
+    </option>
+  </component>
+</project>
